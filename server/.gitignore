@@ -1,0 +1,61 @@
+# Node.js dependencies
+/node_modules/
+
+# Vite build output
+/frontend/dist/
+
+# Express build output (if transpiled, e.g., with Babel/TypeScript)
+/backend/dist/
+/backend/build/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Environment variables
+.env
+.env.*.local
+/backend/.env
+/frontend/.env
+
+# Vite cache
+/frontend/.vite
+
+# Coverage reports
+/coverage/
+
+# Editor & OS files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+.DS_Store
+Thumbs.db
+
+# PM2
+pids/
+*.pm2-log
+
+# Optional - local upload or temp files
+/uploads/
+tmp/
+temp/
+
+# TypeScript cache (if using TS)
+/**/tsconfig.tsbuildinfo
+
+# Build artifacts (optional)
+/build/
+/dist/
