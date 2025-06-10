@@ -25,15 +25,25 @@ export function dateFormatter(dateString) {
   return formattedDate;
 }
 
+// export function getInitials(fullName) {
+//   const names = fullName.split(" ");
+
+//   const initials = names.slice(0, 2).map((name) => name[0].toUpperCase());
+
+//   const initialsStr = initials.join("");
+
+//   return initialsStr;
+// }
+
 export function getInitials(fullName) {
-  const names = fullName.split(" ");
+  if (!fullName || typeof fullName !== "string") return "";
 
-  const initials = names.slice(0, 2).map((name) => name[0].toUpperCase());
+  const names = fullName.trim().split(" ");
+  const initials = names.slice(0, 2).map((name) => name?.[0]?.toUpperCase() || "");
 
-  const initialsStr = initials.join("");
-
-  return initialsStr;
+  return initials.join("");
 }
+
 
 export const updateURL = ({ searchTerm, navigate, location }) => {
   const params = new URLSearchParams();
