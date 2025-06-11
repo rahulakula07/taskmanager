@@ -10,7 +10,7 @@ export default defineConfig({
     proxy: {
       "/api": {
         // target: ["http://localhost:8800","https://taskmanager-three-sigma.vercel.app"],
-        target: ["http://localhost:8800"],
+        target: ["https://taskmanager-three-sigma.vercel.app"],
         changeOrigin: true,
       },
     },
