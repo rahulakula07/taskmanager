@@ -30,3 +30,14 @@ export const apiSlice = createApi({
   tagTypes: [],
   endpoints: (builder) => ({}),
 });
+
+// export const apiSlice = createApi({
+//   baseQuery,
+//   endpoints: (builder) => ({
+//     getNotifications: builder.query({
+//       query: () => "/user/notifications",
+//     }),
+//   }),
+// });
+
+// export const { useGetNotificationsQuery } = apiSlice;
