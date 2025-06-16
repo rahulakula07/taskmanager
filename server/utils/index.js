@@ -6,12 +6,13 @@ const createJWT = (res, userId) => {
   });
 
   return token
-  res.cookie("token", token, {
-    httpOnly: true,
-    secure: process.env.NODE_ENV !== "development", // Use secure cookies in production
-    sameSite: "none", // Prevent CSRF attacks
-    maxAge: 1 * 24 * 60 * 60 * 1000, // 1 days
-  });
+ res.cookie("token", token, {
+  httpOnly: true,
+  secure: process.env.NODE_ENV !== "development", 
+  sameSite: process.env.NODE_ENV !== "development" ? "None" : "Lax", 
+  maxAge: 24 * 60 * 60 * 1000,
+});
+
 // res.cookie("token", token, {
 //   httpOnly: true,
 //   secure: false, // Set false in development
