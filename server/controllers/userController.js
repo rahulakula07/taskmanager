@@ -2,6 +2,7 @@ import asyncHandler from "express-async-handler";
 import Notice from "../models/notis.js";
 import User from "../models/userModel.js";
 import createJWT from "../utils/index.js";
+// import jwt from "jsonwebtoken";
 
 // POST request - login user
 const loginUser = asyncHandler(async (req, res) => {
@@ -26,10 +27,19 @@ const loginUser = asyncHandler(async (req, res) => {
 
   if (user && isMatch) {
     createJWT(res, user._id);
+      // let payload = {
+      //   user:{
+      //     id: user._id
+      //   }
+      // }
+      // const token = jwt.sign(payload, process.env.JWT_SECRET, {
+      //   expiresIn: "1d",
+      // });
 
     user.password = undefined;
+    // user.token = token
 
-    res.status(200).json(user);
+    res.status(200).json({user});
   } else {
     return res
       .status(401)
