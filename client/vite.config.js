@@ -9,8 +9,8 @@ export default defineConfig({
     port: 3000,
     proxy: {
       "/api": {
-        target: ["http://localhost:8800","https://taskmanager-backend-y240.onrender.com"],
-        // target: ["https://taskmanager-backend-y240.onrender.com"],
+        // target: ["http://localhost:8800","https://taskmanager-backend-y240.onrender.com"],
+        target: ["https://taskmanager-backend-y240.onrender.com"],
         changeOrigin: true,
       },
     },
